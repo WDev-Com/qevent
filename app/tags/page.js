@@ -1,8 +1,10 @@
-"use client";
+// Next.js for better performance and SEO.
 import Tag from "../../components/Tag";
 
 export default async function TagsPage() {
-  const res = await fetch("https://qevent-backend.labs.crio.do/tags");
+  const res = await fetch("https://qevent-backend.labs.crio.do/tags", {
+    cache: "no-store", // Ensures fresh data
+  });
   const tagsData = await res.json();
 
   return (
